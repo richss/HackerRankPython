@@ -4,6 +4,14 @@ __author__ = 'Richard S. Stansbury'
 Author:     Richard S. Stansbury
 Project:    HackerRanks - Save the Princess - 2
 Date:       2015-03-14
+
+This file solves the Save the Princess - 2 challenge.
+
+Expected input:
+<matrix dimension>
+<botRow, botCol>
+<nxn grid with "-" for empty, "m" for mario, and "p" for princess
+
 """
 
 def findPrincess(n, grid):
