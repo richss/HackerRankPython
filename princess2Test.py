@@ -1,5 +1,13 @@
 __author__ = 'Richard S. Stansbury'
 
+"""
+Author:     Richard S. Stansbury
+Project:    HackerRanks - Bot Saves the Princess - 2
+Date:       2015-03-14
+
+This file is holds the unit test test cases for princess2.py
+"""
+
 import unittest
 import princess2
 
