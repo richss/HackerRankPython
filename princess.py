@@ -1,16 +1,21 @@
-#!/bin/python
+"""
+Author: Richard S. Stansbury
+Project:  HackerRank - Bot Saves Princess
 
-#########################################################
-#  Author: Richard S. Stansbury
-#  Project:  HackerRank - Bot Saves Princess
-#
-#  This is my first Python program beyond hello world
+This is my first Python program beyond hello world
+"""
 
 
-# Brute Force Search for the bot 'm' and the princess 'p'
 def findPlayers(n, grid):
-    for row in xrange(0, m):
-        for col in xrange(0, m):
+    """
+     Brute force search for the bot and princess
+
+    :param n: width/height dimension of the search area
+    :param grid: search area with bot position 'm' and princess position 'p'
+    :return: array with location of the bot and princess positions
+    """
+    for row in xrange(0, n):
+        for col in xrange(0, n):
 
             if grid[row][col] == 'p':
                 pRow = row
@@ -23,42 +28,59 @@ def findPlayers(n, grid):
     return [sRow, sCol, pRow, pCol]
 
 
-# Moves the bot to the princess following a simple zig-zag
-#  pattern
 def displayPathtoPrincess(n, grid):
+    """
+    Moves the bot to the princess following a simple zig-zag
+    pattern.
+
+    :param n: width/height dimension of the search area
+    :param grid: search area with bot position 'm' and princess position 'p'
+    :return: list
+    """
 
     [row, col, pRow, pCol] = findPlayers(n, grid)
 
-    while row != pRow or col != pCol:
+    moves = []
 
-        #Row Move
+    while not (row == pRow and col == pCol):
+
+        # Row Move
         if row > pRow:
-            print "UP"
+            moves.append("UP")
             row -= 1
 
         elif row < pRow:
-            print "DOWN"
+            moves.append("DOWN")
             row += 1
 
         #Column Move
-        if col > pCol:
-            print "LEFT"
+        elif col > pCol:
+            moves.append("LEFT")
             col -= 1
 
         elif col < pCol:
-            print "RIGHT"
+            moves.append("RIGHT")
             col += 1
 
-#Setup
-m = input()
-
-grid = []
-for i in xrange(0, m):
-    grid.append(raw_input().strip())
+    return moves
 
 
-#Run
-displayPathtoPrincess(m, grid)
+if __name__ == "__main__":
+
+    # Setup
+    m = input()
+
+    grid = []
+    for i in xrange(0, m):
+        grid.append(raw_input().strip())
+
+
+    #Run
+    results = displayPathtoPrincess(m, grid)
+    for result in results:
+        print result
+
+
 
 
 
