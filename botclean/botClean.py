@@ -44,14 +44,15 @@ def calc_manhattan(row1, col1, row2, col2):
     return abs(row1-row2) + abs(col1-col2)
 
 
-def find_closest(bot, grid, w, h):
+def find_closest(bot, grid, h, w):
     """
     Find's the closest dirty cell to the bot location using
     a breadth first search.
 
     :param bot: bot position
     :param grid: grid environment
-    : param n: dimension of environment
+    :param h - height of grid
+    :param w - width of grid
     :return: point of closest dirt
     """
     queue = deque([bot])
