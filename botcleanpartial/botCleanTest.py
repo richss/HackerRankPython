@@ -92,8 +92,8 @@ class MyTestCase(unittest.TestCase):
         old = ['ooooo',
                'ooooo',
                'ooooo',
-               'ooo--',
-               '----b']
+               'oood-',
+               '-----']
 
         new = ['ooooo',
                'ooooo',
